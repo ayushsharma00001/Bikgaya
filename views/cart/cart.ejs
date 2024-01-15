@@ -1,0 +1,60 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+    <body>
+        <% if(cart.mensProduct.length> 0 || cart.womensProduct.length>0){%>
+            <div class="parent-cart-div">
+                <h2>Cart Items</h2>
+                <div class="outer-cart-div">
+                    <% for(let item of cart.mensProduct){%>
+                        <div class="inner-cart-div">
+                            <a href="/men/<%=item._id%>" class="cart-a">
+                                <img src="<%=item.img.url%>" alt="">
+                                <p class="inner-cart-div-p">
+                                    <%=item.name%>
+                                </p>
+                                <p class="inner-cart-div-p">
+                                    <%=item.price%>
+                                </p>
+                            </a>
+                            <p class="inner-cart-div-p">
+                            <form action="/cart/<%=cart._id%>/item/<%=item._id%>?_method=DELETE" method="POST">
+                                <button class="btn btn-danger">Remove from cart</button>
+                            </form>
+                            </p>
+                        </div>
+                        <%}%>
+                </div>
+                <div class="outer-cart-div">
+                    <% for(let item of cart.womensProduct){%>
+                        <div class="inner-cart-div">
+                            <a href="/women/<%=item._id%>" class="cart-a">
+                                <img src="<%=item.img.url%>" alt="">
+                                <p class="inner-cart-div-p">
+                                    <%=item.name%>
+                                </p>
+                                <p class="inner-cart-div-p">
+                                    <%=item.price%>
+                                </p>
+                            </a>
+                            <p class="inner-cart-div-p">
+                            <form action="/cart/<%=cart._id%>/item/<%=item._id%>?_method=DELETE" method="POST">
+                                <button class="btn btn-danger">Remove from cart</button>
+                            </form>
+                            </p>
+                        </div>
+                        <%}%>
+                </div>
+                <div class="cart-items-buy">
+                    <form action="/address/<%=cart._id%>" method="GET">
+                        <button class="btn btn-success">Place Order</button>
+                    </form>
+                </div>
+            </div>
+
+            <%}else{%>
+                <div class="empty-cart">
+                    Cart is Empty
+                </div>
+                <%}%>
+
+    </body>

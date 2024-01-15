@@ -1,0 +1,49 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+    <% if(user.orders.length>0){%>
+        <h2 class="myOrders-h2">All Orders</h2>
+        <div class="row myOrders-row">
+            <%for(order of user.orders){%>
+                <% if(order.mensProducts.length>0){%>
+                    <div class="card col-lg-3 col-md-3 col-sm-4 ms-2 myOrders-card">
+                        <%for(mens of order.mensProducts){%>
+                            <img src="<%=mens.productId.img.url%>" alt="" class="myOrders-img">
+                            <p><a href="/men/<%=mens.productId._id%>"><%=mens.productId.name%></a></p>
+                            <p><b>Price:</b> &#8377;<%=mens.productId.price%></p>
+                        <%}%>
+                        <% if(order.status=="Processing" ){%>
+                            <p class="green">
+                                <%=order.status%>
+                            </p>
+                        <%}else{%>
+                            <p class="red">
+                                <%=order.status%>
+                            </p>
+                        <%}%>
+                    </div>
+                <%}%>
+                <% if(order.womensProducts.length>0){%>
+                    <div class="card col-lg-3 col-md-3 col-sm-4 ms-2 myOrders-card">
+                        <%for(womens of order.womensProducts){%>
+                            <img src="<%=womens.productId.img.url%>" alt="" class="myOrders-img">
+                            <p><%=womens.productId.name%></p>
+                            <p><b>Price:</b> &#8377;<%=womens.productId.price%></p>
+                        <%}%>
+                        <% if(order.status=="Processing" ){%>
+                            <p class="green">
+                                <%=order.status%>
+                            </p>
+                        <%}else{%>
+                            <p class="red">
+                                <%=order.status%>
+                            </p>
+                        <%}%>
+                    </div>
+                <%}%>
+            <%}%>
+
+
+        </div>
+    <%}else{%>
+        <h2 class="myOrders-h2-red">No Orders</h2>
+    <%}%>

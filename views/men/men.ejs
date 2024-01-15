@@ -1,0 +1,18 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+    <body>
+
+
+        <main>
+            <div class="container">
+                <% for(men of mens){ %>
+                    <a href="/men/<%=men._id%>">
+                        <div class="products">
+                            <img src="<%=men.img.url%>" alt="" class="women-category-img">
+                            <%=men.name%>
+                        </div>
+                    </a>
+                    <% } %>
+            </div>
+        </main>
+    </body>

@@ -1,0 +1,136 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.dash-men-products-heading{
+    margin-left: 1.4rem;
+}
+
+.dash-men-products{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+
+
+.dash-men-product-card{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 30%;
+    height: 100vh;
+    margin-top: 0.5rem;
+}
+.dash-men-product-card-imgDiv{
+    width: 100%;
+    overflow: hidden;
+
+}
+
+
+.dash-men-product-card-img{
+    width: 100%;
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+}
+
+.dash-men-product-card-img:hover{
+    transform: scale(1.2);
+}
+
+.dash-men-product-elems-a{
+    text-decoration: none;
+    border: 2px solid black;
+    background-color: black;
+    border-radius: 5px;
+    padding: 0.2rem;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.outer-women, .outer-men{
+    margin-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.table-row{
+    text-align: center;
+}
+
+#outerDivOfTable{
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    white-space: nowrap;
+    justify-content: center;
+    margin: 2rem;
+}
+#outerDivOfTable h2{
+    text-align: center;
+}
+.all-orders{
+    margin: 2rem;
+
+}
+.table-row-data{
+    padding: 0.5rem;
+}
+.order-a{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+.order-a-show{
+    text-decoration: none;
+
+}
+.order-card{
+    padding: 1rem;
+}
+.outerboxdiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+#outerDivOfOrders{
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    white-space: nowrap;
+    justify-content: center;
+    margin: 2rem;
+}
+
+.order-edit{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.order-edit select{
+    margin-bottom: 0.5rem;
+    border: 1px solid black;
+    border-radius: 2px;
+    outline: none;
+}
+
+.dasboard-row{
+    margin: 0;
+}

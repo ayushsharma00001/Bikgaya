@@ -1,0 +1,44 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<body>
+    <div class="whole-form">
+        <h2>Shipping Address</h2>
+        <%if(user.address == null){%>
+            <form action="/address/<%=cart._id%>" method="POST" novalidate class="needs-validation edit-form">
+                <div class="input-label mb-3">
+                    <label for="contact1">Contact Number</label>
+                    <input type="number" name="address[contact]" id="contact1"
+                        placeholder="Enter Contact Number" class="edit-input form-control" required>
+                    <div class="valid-feedback">Contact looks Good!</div>
+                    <div class="invalid-feedback">Please enter Contact Number</div>
+                </div>
+                <div class="input-label mb-3">
+                    <label for="street1">Street</label>
+                    <input type="text" name="address[street]" id="street1"
+                        placeholder="Enter Street and House number" class="edit-input form-control" required>
+                    <div class="valid-feedback">Street looks Good!</div>
+                    <div class="invalid-feedback">Please enter Street</div>
+                </div>
+                <div class="input-label mb-3">
+                    <label for="city1">City</label>
+                    <input type="text" name="address[city]" id="city1"
+                        placeholder="Enter City" class="edit-input form-control" required>
+                    <div class="valid-feedback">City looks Good!</div>
+                    <div class="invalid-feedback">Please enter City</div>
+                </div>
+                <button class="btn btn-primary">Continue</button>
+            </form>
+        <%}else{%>
+            <form action="/order/<%=cart._id%>/<%=address._id%>" method="GET" class="continue-address-form">
+                <div class="mt-3">
+                    <p><b>Street:</b> <%=address.street%></p>
+                    <p><b>City:</b> <%=address.city%></p>
+                    <p><b>Contact Number:</b> <%=address.contact%></p>
+                </div>
+                <button class="btn btn-primary">Continue with this adrress</button>
+            </form>
+            <form action="/edit/address/<%=address._id%>/cart/<%=cart._id%>" method="GET" class="continue-address-form mt-3"> 
+                <button class="btn btn-secondary">Edit Address</button>
+            </form>
+        <%}%>
+    </div>
+</body>

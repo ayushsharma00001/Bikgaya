@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-md bg-body-dark border-bottom sticky-top mb-4">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/"><i class="fa-brands fa-buysellads"></i></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link nav-link-item" href="/">Home</a>
+                <%if(currUser && currUser.access == "admin") {%>
+                    <a class="nav-link nav-link-item" href="/add">Add product</a>
+                    <a class="nav-link nav-link-item" href="/dashboard">Dashboard</a>
+                <%} %>
+                <%if(currUser) {%>
+                    <a class="nav-link nav-link-item" href="/cart/section/<%=currUser._id%>">Cart</a>
+                    <a class="nav-link nav-link-item" href="/myOrders/<%=currUser._id%>"> My Orders</a>
+                <%} %>
+                <a class="nav-link nav-link-item" href="/about">About us</a>
+                <a class="nav-link nav-link-item" href="/contact">Contact us</a>
+            </div>
+            <div class="navbar-nav ms-auto">
+                <%if(!currUser){%>
+                    <form action="/signup" method="GET">
+                        <button class="btn btn-primary margin-left-btn">Sign up</button>
+                    </form>
+                    <form action="/login" method="GET">
+                        <button class="btn btn-secondary margin-left-btn">Login</button>
+                    </form>
+                    <%}%>
+                        <%if(currUser){%>
+                            <form action="/logout" method="GET">
+                                <button class="btn btn-danger">Log out</button>
+                            </form>
+                            <%}%>
+            </div>
+        </div>
+    </div>
+</nav>

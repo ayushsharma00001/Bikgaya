@@ -1,0 +1,50 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<body>
+    <div class="whole-form">
+        <h2>Add Product</h2>
+        <form action="/add" method="POST" novalidate class="needs-validation edit-form" enctype="multipart/form-data" id="myForm">
+            <div class="input-label mb-3">
+                <label for="name1">Name</label>
+                <input type="text" name="product[name]" id="name1"
+                placeholder="Enter name of product" class="edit-input form-control" required>
+                <div class="valid-feedback">Name looks Good!</div>
+                <div class="invalid-feedback">Please enter a Name</div>
+            </div>
+            <div class="input-label mb-3">
+                <label for="description1">Description</label>
+                <input type="text" name="product[description]" id="description1"
+                    placeholder="Enter Description" class="edit-input form-control" required>
+                <div class="valid-feedback">Description looks Good!</div>
+                <div class="invalid-feedback">Please enter a Description</div>
+            </div>
+            <div class="input-label mb-3">
+                <label for="price1">Price</label>
+                <input type="number" name="product[price]" id="price1"
+                    placeholder="Enter price" class="edit-input form-control" required>
+                <div class="valid-feedback">Price looks Good!</div>
+                <div class="invalid-feedback">Please enter a Price</div>
+            </div>
+            <div class="input-label mb-3">
+                <label for="stock1">Stock</label>
+                <input type="number" name="product[stock]" id="stock1"
+                    placeholder="Enter Stock" class="edit-input form-control" required>
+                <div class="valid-feedback">Stock looks Good!</div>
+                <div class="invalid-feedback">Please enter Stock</div>
+            </div>
+            <div class="input-label mb-3">
+                <label for="type1">Category</label>
+                <select name="category" id="type1" required class="edit-input form-control">
+                    <option value="men">Men</option>
+                    <option value="women">Women</option>
+                </select>
+            </div>
+            <div class="input-label mb-3">
+                <label for="img1">Upload Image</label>
+                <input type="file" name="product[img]" id="img1"
+                    class="edit-input form-control" required>
+                <div class="valid-feedback">Image link looks Good!</div>
+            </div>
+            <button class="edit-btn" onclick="disableButton(event)" id="myButton">Add</button>
+        </form>
+    </div>
+</body>

@@ -1,0 +1,47 @@
+@media only screen and (max-width: 750px) {
+    /* show page  */
+    .show-img{
+        width: 90%;
+        height: 40rem;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-top: 0.5rem;
+      
+    }
+    .show-btn{
+        width: 7rem;
+    }
+    .p-elems{
+        text-align: center;
+    }
+    .inner-cart-div{
+        flex-direction: column;
+        width: 95%;
+        justify-content: center;
+        align-items: center;
+    }
+    .cart-a{
+        width: 95%;
+        justify-content: flex-start;
+
+    }
+    .inner-cart-div-p{
+        padding: 0 2rem;
+    }
+}
+@media only screen and (max-width: 1020px) {
+    .outer-men{
+        width: 100%;
+    }
+    .dash-men-products{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+    .dash-men-product-card{
+        width: 95%;
+    }
+
+}

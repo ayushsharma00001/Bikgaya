@@ -1,0 +1,30 @@
+<% layout("/layouts/boilerplate.ejs") %>
+    <body>
+        <div class="whole-form">
+            <h2>Edit Shipping Address</h2>
+            <form action="/edit/address/<%=address._id%>/cart/<%=cart._id%>?_method=PUT" method="POST" novalidate class="needs-validation edit-form">
+                <div class="input-label mb-3">
+                    <label for="contact1">Contact Number</label>
+                    <input type="number" name="address[contact]" id="contact1" placeholder="Enter Contact Number" value="<%=address.contact%>" 
+                        class="edit-input form-control" required maxlength="10" minlength="10">
+                    <div class="valid-feedback">Contact looks Good!</div>
+                    <div class="invalid-feedback">Please enter Contact Number</div>
+                </div>
+                <div class="input-label mb-3">
+                    <label for="street1">Street</label>
+                    <input type="text" name="address[street]" id="street1" placeholder="Enter Street and House number" value="<%=address.street%>"
+                        class="edit-input form-control" required>
+                    <div class="valid-feedback">Street looks Good!</div>
+                    <div class="invalid-feedback">Please enter Street</div>
+                </div>
+                <div class="input-label mb-3">
+                    <label for="city1">City</label>
+                    <input type="text" name="address[city]" id="city1" placeholder="Enter City" value="<%=address.city%>"
+                        class="edit-input form-control" required>
+                    <div class="valid-feedback">City looks Good!</div>
+                    <div class="invalid-feedback">Please enter City</div>
+                </div>
+                <button class="btn btn-primary">Update</button>
+            </form>
+        </div>
+    </body>

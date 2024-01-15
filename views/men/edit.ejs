@@ -1,0 +1,44 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+    <body>
+        <div class="whole-form">
+            <h2>Edit the Product</h2>
+            <form action="/men/<%=data._id%>?_method=PUT" method="POST" novalidate class="needs-validation edit-form" enctype="multipart/form-data">
+                <div class="input-label mb-3">
+                    <label for="name1">Name</label>
+                    <input type="text" name="product[name]" id="name1" value="<%=data.name%>"
+                        placeholder="Enter name of product" class="edit-input form-control" required>
+                    <div class="valid-feedback">Name looks Good!</div>
+                    <div class="invalid-feedback">Please enter a Name</div>
+                </div>
+                <div class="input-label mb-3">
+                    <label for="description1">Description</label>
+                    <input type="text" name="product[description]" id="description1" value="<%=data.description%>"
+                        placeholder="Enter Description" class="edit-input form-control" required>
+                    <div class="valid-feedback">Description looks Good!</div>
+                    <div class="invalid-feedback">Please enter a Description</div>
+                </div>
+                <div class="input-label mb-3">
+                    <label for="price1">Price</label>
+                    <input type="text" name="product[price]" id="price1" value="<%=data.price%>"
+                        placeholder="Enter price" class="edit-input form-control" required>
+                    <div class="valid-feedback">Price looks Good!</div>
+                    <div class="invalid-feedback">Please enter a Price</div>
+                </div>
+                <div class="input-label mb-3">
+                    <label for="stock1">Stock</label>
+                    <input type="number" name="product[stock]" id="stock1"
+                        placeholder="Enter Stock" class="edit-input form-control" required value="<%=data.stock%>">
+                    <div class="valid-feedback">Stock looks Good!</div>
+                    <div class="invalid-feedback">Please enter Stock</div>
+                </div>
+                <div class="input-label mb-3">
+                    <label for="img1">Upload Image</label>
+                    <input type="file" name="product[img]" id="img1"
+                        class="edit-input form-control">
+                    <div class="valid-feedback">Image link looks Good!</div>
+                </div>
+                <button class="edit-btn">Edit</button>
+            </form>
+        </div>
+    </body>

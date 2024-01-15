@@ -1,0 +1,37 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+<div class="outerboxdiv">
+    <div class="card order-card">
+        <h4>Order Id: <%=order._id%></h4>
+        <h5>Username: <%=order.userId.username%></h5>
+        <p>Payment method: <%=order.payment%></p>
+        <p>Total Price: <%=order.totalprice%></p>
+        <p>Status: <%=order.status%></p>
+        <p>Address: <%=order.addressId.street%></p><p><%=order.addressId.city%></p><p><%=order.addressId.contact%></p>
+        <p>Womens Products: <%for(let product of order.womensProducts){%>
+            <a href="/women/<%=product.productId._id%>" class="order-a-show">
+                <%=product.productId.name%> <br>
+            </a>
+        <%}%></p>
+        <p>
+            Mens Products:
+            <%for(let product of order.mensProducts){%>
+                <a href="/men/<%=product.productId._id%>" class="order-a-show">
+                    <%=product.productId.name%> <br>
+                </a>
+            <%}%>
+        </p>
+        <p>
+            <form action="/dashboard/<%=order._id%>?_method=PUT" method="POST" class="order-edit">
+                <select name="order[status]" id="status1">
+                    <option value="<%=order.status%>">Select Status</option>
+                    <option value="Processing">Processing</option>
+                    <option value="Shipped">Shipped</option>
+                    <option value="Delivered">Delivered</option>
+                    <option value="Failed">Failed</option>
+                </select>
+                <button class="btn btn-primary">Edit Order</button>
+            </form>
+        </p>
+    </div>
+</div>

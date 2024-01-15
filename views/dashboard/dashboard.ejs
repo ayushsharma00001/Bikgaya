@@ -1,0 +1,24 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<%if(orders.length>0){%>
+    <h2 class="all-orders">All Orders</h2>
+    <div id="outerDivOfOrders">
+        <%for(order of orders){%>
+            <a href="/dashboard/<%=order._id%>" class="order-a">
+                <h4>Product Id: <%=order._id%></h4>
+                <h5>Username: <%=order.userId.username%></h5>
+                <p>Payment method: <%=order.payment%></p>
+                <p>Total Price: <%=order.totalprice%></p>
+                <p>Order Status: <%=order.status%></p>
+            </a>
+        <%}%>
+    </div>
+<%}else{%>
+    <h2 class="all-orders ms-4">No Orders Available</h2>
+<%}%>
+<div class="dashboard-row">
+    <div class="ms-4">
+        <a href="/dashboard/allUsers">See All Users</a> <br>
+        <a href="/dashboard/allProducts">See All Products</a>
+    </div>
+</div>
+
