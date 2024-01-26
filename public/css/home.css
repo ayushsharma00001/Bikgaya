@@ -19,6 +19,10 @@ body {
   margin-left: 0.5rem !important;
 }
 
+.logo{
+  color: rgb(205, 87, 87);
+}
+
 
 
 /* footer */
@@ -343,8 +347,9 @@ label{
 }
 .myOrders-row{
   margin: 0;
-  display: flex;
+  display: flex !important;
   justify-content: center;
+  flex-wrap: wrap;
 
 }
 .myOrders-card{
